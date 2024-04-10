@@ -1,0 +1,38 @@
+.card {
+    display: flex;
+    height: 300px;
+    width: 600px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #191b20;
+    color: aliceblue;
+    border: 2px solid #5f1919;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 10px 2px #777;
+
+}
+
+.card-body {
+    color: aqua;
+    display: flex;
+    flex-direction: column;
+    background-color: #282c34;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-container {
+    width: 40%;
+}
+
+.card-footer {
+    color: aqua;
+}
+
+
+.content-container {
+    margin-left: 15px;
+}
