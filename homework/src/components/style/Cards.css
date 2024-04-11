@@ -25,7 +25,8 @@
 }
 
 .image-container {
-    width: 40%;
+    /* width: 30%; */
+    height: 60%;
 }
 
 .card-footer {
