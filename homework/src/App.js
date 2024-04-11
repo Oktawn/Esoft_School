@@ -7,8 +7,11 @@ import { useState } from 'react';
 function App() {
   const [card, setCard] = useState();
 
-  const onClick = (newCard) => {
+  const onUpdate = (newCard) => {
     setCard(newCard)
+  }
+  const onStart = () => {
+    setCard()
   }
 
 
@@ -17,9 +20,9 @@ function App() {
       <body className='card-body'>
         <Card {...card} />
         <div className='card-footer'>
-          <p> My card </p>
+          <p><ButtonMy name={"My card"} onUpdate={onStart} /></p>
 
-          <p><a>My competencies </a> <ButtonMy name={"start"} onUpdate={onClick} /> <ButtonMy name={"next"} onUpdate={onClick} /> </p>
+          <p><a>My competencies </a> <ButtonMy name={"start"} onUpdate={onUpdate} /> <ButtonMy name={"next"} onUpdate={onUpdate} /> </p>
 
           <p><a>Desired competencies </a> <ButtonMy name={"start"} /> <ButtonMy name={"next"} /></p>
         </div>

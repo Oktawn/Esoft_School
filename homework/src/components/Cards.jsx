@@ -1,14 +1,11 @@
 import React from 'react';
 import './style/Cards.css';
 
-const main_card = { img_src: "./images/cat_main.jpg", Title: "Белых Дмитрий Михайлович", text: "вот так меня зовут 😝" }
-
-
 export default function Card({
-    img_src = main_card.img_src,
-    Title = main_card.Title,
-    text = main_card.text }) {
-
+    img_src = "./images/cat_main.jpg",
+    Title = "Белых Дмитрий Михайлович",
+    text = "вот так меня зовут 😝" }) {
+    const main_card = { img_src: "./images/cat_main.jpg", Title: "Белых Дмитрий Михайлович", text: "вот так меня зовут 😝" }
 
     return (
         <div className="card">
