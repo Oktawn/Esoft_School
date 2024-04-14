@@ -1,15 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './style/Cards.css';
+import CirleProgressBar from './CircleProgressBar';
 
-export default function Card({
-    img_src = "./images/cat_main.jpg",
-    Title = "Белых Дмитрий Михайлович",
-    text = "вот так меня зовут 😝" }) {
-    const main_card = { img_src: "./images/cat_main.jpg", Title: "Белых Дмитрий Михайлович", text: "вот так меня зовут 😝" }
+export default function Card({ comp, onChange, onDel }) {
+
+    const [isEdit, setEdit] = useState(false);
+    let content;
+    if(isEdit){
+        content=(
+            <>
+            </>
+        )
+    }
+
+
 
     return (
         <div className="card">
-            <img src={img_src} className='image-container' alt="card" />
+            <CirleProgressBar />
             <div className="content-container">
                 <h2>{Title}</h2>
                 <p>{text}</p>

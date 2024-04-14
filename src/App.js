@@ -1,30 +1,51 @@
 import './App.css';
+import AddComp from './components/AddComp';
 import Card from './components/Cards';
-import ButtonMy, { ButtonDes } from './components/Button';
 import { useState } from 'react';
+import CompList from './components/CompList';
+
+const initComp = [{ title: "думоть", desc: "принимать верные решения", pers: 0 }]
 
 
 function App() {
-  const [card, setCard] = useState();
+  const [comps, setComps] = useState(initComp);
 
-  const onUpdateCompetences = (newCard) => {
-    setCard(newCard)
+  function handleAddComp(title, desc, pers) {
+    setComps([
+      ...comps,
+      {
+        title: title,
+        desc: desc,
+        pers: pers
+      }
+    ]);
   }
-  const onStart = () => {
-    setCard()
+
+  function handleChangeComp(newComp) {
+    setComps(comps.map(t => {
+      if (t.title == newComp.title)
+        return newComp;
+      else
+        return t;
+    }));
   }
+
+  function handleDelComp(compTitle) {
+    setComps(
+      comps.filter(t => t.title !== compTitle)
+    );
+  }
+
+
 
   return (
     <div className="App">
       <body className='card-body'>
-        <Card {...card} />
-        <div className='card-footer'>
-          <p><ButtonMy name={"My card"} onUpdate={onStart} /></p>
-
-          <p><a>My competencies </a> <ButtonMy name={"start"} onUpdate={onUpdateCompetences} /> <ButtonMy name={"next"} onUpdate={onUpdateCompetences} /> </p>
-
-          <p><a>Desired competencies </a> <ButtonDes name={"start"} onUpdate={onUpdateCompetences} /> <ButtonDes name={"next"} onUpdate={onUpdateCompetences} /></p>
-        </div>
+        <AddComp onAddComp={handleAddComp} />
+        <CompList
+          comps={comps}
+          onChangeComp={handleChangeComp}
+          onDelComp={handleDelComp} />
       </body>
     </div>
   );
