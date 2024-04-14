@@ -1,16 +1,19 @@
-import { useState } from "react";
 import Card from "./Cards";
 
 export default function CompList({
-    comps, onChangeComp, onDelComp
+    comps,
+    onChangeComp,
+    onDelComp
 }) {
     return (
         <ul>
             {comps.map(comp => (
                 <li key={comp.title}>
-                    <Card comp={comp}
+                    <Card
+                        comp={comp}
                         onChange={onChangeComp}
-                        onDel={onDelComp} />
+                        onDel={onDelComp}
+                    />
                 </li>
             ))}
         </ul>

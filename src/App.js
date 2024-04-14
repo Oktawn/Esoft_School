@@ -1,7 +1,7 @@
 import './App.css';
 import AddComp from './components/AddComp';
 import Card from './components/Cards';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import CompList from './components/CompList';
 
 const initComp = [{ title: "думоть", desc: "принимать верные решения", pers: 0 }]
@@ -17,13 +17,13 @@ function App() {
         title: title,
         desc: desc,
         pers: pers
-      }
+      },
     ]);
   }
 
   function handleChangeComp(newComp) {
     setComps(comps.map(t => {
-      if (t.title == newComp.title)
+      if (t.title === newComp.title)
         return newComp;
       else
         return t;
