@@ -2,7 +2,6 @@ import Card from "./Cards";
 
 export default function CompList({
     comps,
-    onChangeComp,
     onDelComp
 }) {
     return (
@@ -11,7 +10,6 @@ export default function CompList({
                 <li key={comp.title}>
                     <Card
                         comp={comp}
-                        onChange={onChangeComp}
                         onDel={onDelComp}
                     />
                 </li>

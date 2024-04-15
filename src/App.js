@@ -3,13 +3,14 @@ import AddComp from './components/AddComp';
 import './components/style/Cards.css'
 import React, { useState } from 'react';
 import CompList from './components/CompList';
-import VisibleComp from './components/VisibleComp';
+import { VisibleComp } from './components/VisibleComp';
 
 const initComp = [{ title: "думоть", desc: "принимать верные решения", pers: 0 }]
 
 
 function App() {
   const [comps, setComps] = useState(initComp);
+  const [showComps, setShow] = useState(comps);
 
   function handleAddComp(title, desc, pers) {
     setComps([
@@ -20,28 +21,41 @@ function App() {
         pers: pers
       },
     ]);
+    setShow([
+      ...showComps,
+      {
+        title: title,
+        desc: desc,
+        pers: pers
+      },
+    ]);
   }
 
   function handleShowAll() {
-    return comps;
+    setShow(comps);
+  }
+
+  function handleHidden() {
+    setShow([]);
   }
 
   function handleShowSuccess() {
-    const compsSucccess = comps.filter(t =>
-      t.pers > 50);
-    return compsSucccess;
+    setShow(comps.filter(t =>
+      t.pers > 50));
   }
 
   function handleShowFail() {
-    const compsSucccess = comps.filter(t =>
-      t.pers <= 50);
-    return compsSucccess;
+    setShow(comps.filter(t =>
+      t.pers <= 50));
   }
 
 
   function handleDelComp(compTitle) {
     setComps(
       comps.filter(t => t.title !== compTitle)
+    );
+    setShow(
+      showComps.filter(t => t.title !== compTitle)
     );
   }
 
@@ -51,8 +65,12 @@ function App() {
     <div className="App">
       <body className='card-body'>
         <AddComp onAddComp={handleAddComp} />
+        <VisibleComp onShow={handleShowAll} name={"Show All Cards"} />
+        <VisibleComp onShow={handleShowSuccess} name={"Success Progress"} />
+        <VisibleComp onShow={handleShowFail} name={"Failure Progress"} />
+        <VisibleComp onShow={handleHidden} name={"Hidden All"} />
         <CompList
-          comps={comps}
+          comps={showComps}
           onDelComp={handleDelComp} />
       </body>
     </div>
