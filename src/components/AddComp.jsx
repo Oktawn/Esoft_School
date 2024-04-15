@@ -26,7 +26,6 @@ export default function AddComp({ onAddComp }) {
             />
             <input placeholder="Add progress "
                 type="number"
-                max={100}
                 value={pers}
                 onChange={e => setPerc(parseInt(e.target.value > 100 ? 100 : e.target.value))} />
 

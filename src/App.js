@@ -1,8 +1,9 @@
 import './App.css';
 import AddComp from './components/AddComp';
-import Card from './components/Cards';
+import './components/style/Cards.css'
 import React, { useState } from 'react';
 import CompList from './components/CompList';
+import VisibleComp from './components/VisibleComp';
 
 const initComp = [{ title: "думоть", desc: "принимать верные решения", pers: 0 }]
 
@@ -21,14 +22,22 @@ function App() {
     ]);
   }
 
-  function handleChangeComp(newComp) {
-    setComps(comps.map(t => {
-      if (t.title === newComp.title)
-        return newComp;
-      else
-        return t;
-    }));
+  function handleShowAll() {
+    return comps;
   }
+
+  function handleShowSuccess() {
+    const compsSucccess = comps.filter(t =>
+      t.pers > 50);
+    return compsSucccess;
+  }
+
+  function handleShowFail() {
+    const compsSucccess = comps.filter(t =>
+      t.pers <= 50);
+    return compsSucccess;
+  }
+
 
   function handleDelComp(compTitle) {
     setComps(
@@ -44,7 +53,6 @@ function App() {
         <AddComp onAddComp={handleAddComp} />
         <CompList
           comps={comps}
-          onChangeComp={handleChangeComp}
           onDelComp={handleDelComp} />
       </body>
     </div>
