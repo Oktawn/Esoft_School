@@ -1,31 +1,28 @@
-# Getting Started with Create React App
+## Задание 1
+### Цель: Создать простой таймер обратного отсчета, который начинает отсчет, например, с 10 до 0.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Шаги:  
+Создайте компонент CountdownTimer.
+Используйте useState для хранения текущего значения таймера.
+Настройте useEffect, чтобы установить интервал, который уменьшает значение каждую секунду.
+После того как таймер достигнет нуля, остановите интервал с помощью функции очистки в useEffect.
 
-## Available Scripts
 
-In the project directory, you can run:
+## Задание 2: Загрузка и отображение данных
+### Цель: Создать компонент, который загружает список пользователей с API при первой загрузке компонента.
 
-### `npm start`
+Шаги:  
+Создайте компонент UserList.
+Используйте useState для хранения списка пользователей.
+Используйте useEffect для отправки HTTP-запроса к API (например, https://jsonplaceholder.typicode.com/users) при монтировании компонента.
+Отобразите список пользователей на странице.
+## Задание 3: Слежение за изменением размера окна
+### Цель: Создать компонент, который отображает и обновляет текущий размер окна браузера.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Шаги:  
+Создайте компонент WindowSize.
+Используйте useState для хранения размеров окна.
+Используйте useEffect для добавления обработчика события resize, который обновляет состояние с текущими размерами окна.
+Убедитесь, что обработчик события удаляется при размонтировании компонента, чтобы избежать утечек памяти.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
+В результате выполнения работы у вас должно получится 3 компонента. 
