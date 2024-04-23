@@ -1,12 +1,9 @@
 import { useState } from "react";
 
-
-
-
-function ButtonMy({ name, onUpdate }) {
+function ButtonMyDescription({ name, onUpdate }) {
     const [pos, setPos] = useState(0);
     function handleClick() {
-        if (name == "next") {
+        if (name === "next") {
             if (pos >= my_comp.length - 1) {
                 setPos(0);
             } else {
@@ -29,10 +26,10 @@ function ButtonMy({ name, onUpdate }) {
     );
 };
 
-export function ButtonDes({ name, onUpdate }) {
+export function ButtonDescriptionRecom({ name, onUpdate }) {
     const [pos, setPos] = useState(0);
     function handleClick() {
-        if (name == "next") {
+        if (name === "next") {
             if (pos >= des_comp.length - 1) {
                 setPos(0);
             } else {
@@ -60,4 +57,4 @@ const my_comp = [["./images/happy.jpg", "главная компитенция"]
 
 const des_comp = ["научиться строить полноценные приложения", "изучить основы верски", "понять связь между front/back", "работать с БД", "научиться работать с контейнеризацией", "постичь принцип CI/CD", "на этом поток желании пока заканчивается ＼（〇_ｏ）／"]
 
-export default ButtonMy;
+export default ButtonMyDescription;

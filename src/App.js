@@ -1,6 +1,6 @@
 import './App.css';
 import Card from './components/Cards';
-import ButtonMy, { ButtonDes } from './components/Button';
+import ButtonMyDescription, { ButtonDescriptionRecom } from './components/Button';
 import { useState } from 'react';
 
 
@@ -19,11 +19,11 @@ function App() {
       <body className='card-body'>
         <Card {...card} />
         <div className='card-footer'>
-          <p><ButtonMy name={"My card"} onUpdate={onStart} /></p>
+          <p><ButtonMyDescription name={"My card"} onUpdate={onStart} /></p>
 
-          <p><a>My competencies </a> <ButtonMy name={"start"} onUpdate={onUpdateCompetences} /> <ButtonMy name={"next"} onUpdate={onUpdateCompetences} /> </p>
+          <p><a>My competencies </a> <ButtonMyDescription name="start" onUpdate={onUpdateCompetences} /> <ButtonMyDescription name="next" onUpdate={onUpdateCompetences} /> </p>
 
-          <p><a>Desired competencies </a> <ButtonDes name={"start"} onUpdate={onUpdateCompetences} /> <ButtonDes name={"next"} onUpdate={onUpdateCompetences} /></p>
+          <p><a>Desired competencies </a> <ButtonDescriptionRecom name="start" onUpdate={onUpdateCompetences} /> <ButtonDescriptionRecom name="next" onUpdate={onUpdateCompetences} /></p>
         </div>
       </body>
     </div>
