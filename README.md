@@ -1,31 +1,17 @@
-# Getting Started with Create React App
+1. Настройка проекта:
+    * Инициализируйте новый Git репозиторий или склонируйте существующий.
+    * Создайте новую ветку для этого задания, назвав её feature/ваш_номер_дз (
+ feature/3).
+2. Разработка приложения:
+    * Используя Create React App, создайте новое React приложение.
+    * Создайте кнопку "Показать компетенции".  
+    * При нажатии на эту кнопку должен отображаться список всех компетенций; кнопка должна трансформироваться в "Убрать компетенции", которая скроет список.
+    * Ваши компетенции должны быть представлены в виде карточек, каждая из которых отображается из массива данных.
+ 3. Каждая карточка — это отдельный React компонент, который получает данные через props. Эти данные включают: название навыка, описание и уровень освоения в процентах.
+    * компетенции должны рендерится из массива
+    * Разделите приложение на мелкие компоненты, например, выделите отдельные компоненты для текстовых полей, кнопок и так далее.
+     * Добавьте функциональность для фильтрации компетенций:
+      * Кнопка "Показать компетенции с уровнем изучения >50%" покажет только те навыки, уровень освоения которых больше 50%.
+      * Кнопка "Показать компетенции с уровнем изучения <50%" покажет навыки с уровнем освоения меньше 50%.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
+      При клике на любую из кнопок, на экране должны оставаться только соответствующие компетенции
